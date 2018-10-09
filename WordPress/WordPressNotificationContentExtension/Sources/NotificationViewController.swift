@@ -99,12 +99,9 @@ private extension NotificationViewController {
     /// - Returns: the username if found; `nil` otherwise
     ///
     private func readExtensionUsername() -> String? {
-        guard
-            let username = try? SFHFKeychainUtils.getPasswordForUsername(WPNotificationContentExtensionKeychainUsernameKey,
-                                                                         andServiceName: WPNotificationContentExtensionKeychainServiceName,
-                                                                         accessGroup: WPAppKeychainAccessGroup)
-            else
-        {
+        guard let username = try? SFHFKeychainUtils.getPasswordForUsername(WPNotificationContentExtensionKeychainUsernameKey,
+                                                                           andServiceName: WPNotificationContentExtensionKeychainServiceName,
+                                                                           accessGroup: WPAppKeychainAccessGroup) else {
             debugPrint("Unable to retrieve Notification Content Extension username")
             return nil
         }

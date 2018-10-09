@@ -108,9 +108,8 @@ class NotificationService: UNNotificationServiceExtension {
         guard let oauthToken = try? SFHFKeychainUtils.getPasswordForUsername(WPNotificationServiceExtensionKeychainTokenKey,
                                                                              andServiceName: WPNotificationServiceExtensionKeychainServiceName,
                                                                              accessGroup: WPAppKeychainAccessGroup) else {
-
-                                                                                debugPrint("Unable to retrieve Notification Service Extension OAuth token")
-                                                                                return nil
+            debugPrint("Unable to retrieve Notification Service Extension OAuth token")
+            return nil
         }
 
         return oauthToken
@@ -124,9 +123,8 @@ class NotificationService: UNNotificationServiceExtension {
         guard let username = try? SFHFKeychainUtils.getPasswordForUsername(WPNotificationServiceExtensionKeychainUsernameKey,
                                                                            andServiceName: WPNotificationServiceExtensionKeychainServiceName,
                                                                            accessGroup: WPAppKeychainAccessGroup) else {
-
-                                                                            debugPrint("Unable to retrieve Notification Service Extension username")
-                                                                            return nil
+            debugPrint("Unable to retrieve Notification Service Extension username")
+            return nil
         }
 
         return username
